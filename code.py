@@ -52,7 +52,6 @@ def analys(path, lang):
 			#1 是否空行
 			if re.match('^[\\s]*$', line) != None:
 				blanks += 1
-				# if debug: print '%3d|'%lines, '%4s|'%'空行', rline
 				log(lines, '空行', rline)
 				continue
 			#2 是否在多行注释中
@@ -67,7 +66,6 @@ def analys(path, lang):
 					#9 多行注释结尾后面的是否空白
 					if re.match('^[\\s]*$', next_str) != None:
 						comments += 1
-						# if debug: print '%3d|'%lines, '%4s'%'多行|', rline
 						log(lines, '多行', rline)
 					else:
 						#10 多行注释结尾后面的是否单行注释
@@ -78,15 +76,12 @@ def analys(path, lang):
 								break
 						if f10:
 							comments += 1
-							# if debug: print '%3d|'%lines, '%4s'%'多行|', rline
 							log(lines, '多行', rline)
 						else:
 							codes += 1
-							# if debug: print '%3d|'%lines, '%4s'%'代码|', rline
 							log(lines, '代码', rline)
 				else:
 					comments += 1
-					# if debug: print '%3d|'%lines, '%4s'%'多行|', rline
 					log(lines, '多行', rline)
 			else:
 				#3 是否单行注释
@@ -95,7 +90,6 @@ def analys(path, lang):
 					if re.match('^[\\s]*' + x + '.*', line) != None:
 						f3 = True
 						comments += 1
-						# if debug: print '%3d|'%lines, '%4s'%'单行|', rline
 						log(lines, '单行', rline)
 						break
 				if f3:
@@ -112,11 +106,9 @@ def analys(path, lang):
 						break
 				if f5:
 					comments += 1
-					# if debug: print '%3d|'%lines, '%4s'%'多行|', rline
 					log(lines, '多行', rline)
 				else:
 					codes += 1
-					# if debug: print '%3d|'%lines, '%4s'%'代码|', rline
 					log(lines, '代码', rline)
 
 	# print '总行:%4d'%lines
