@@ -24,10 +24,7 @@ def log(num, tag, rline):
         print '%3d|'%num, '%4s'%'' + tag + '|', rline
 
 def analys(path, lang):
-    codes = 0
-    comments = 0
-    blanks = 0
-    lines = 0
+    codes, comments, blanks, lines = 0, 0, 0, 0
 
     string_regex = lang['string_regex']
     single_comment = lang['single_comment']

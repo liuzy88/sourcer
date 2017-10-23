@@ -92,12 +92,7 @@ class Dir:
         print self.exts_nums
         print '这些扩展名不处理'
         print self.other_exts
-        langs = {}
-        files = 0
-        codes = 0
-        comments = 0
-        blanks = 0
-        lines = 0
+        langs, files, codes, comments, blanks, lines = {}, 0, 0, 0, 0, 0
         for x in self.file_lang:
             lang = x['lang']['name']
             ret = analys(x['path'], x['lang'])
