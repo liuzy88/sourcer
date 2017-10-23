@@ -6,7 +6,7 @@ from util import config, Dir
 
 start = time.time()
 
-Dir('D:\\Github\\kafka').analys()
+Dir('exp').analys()
 
 end = time.time()
 
