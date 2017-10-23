@@ -113,8 +113,9 @@ class Dir:
             blanks += ret['blanks']
             lines += ret['lines']
             files += 1
-        print ''
+        langs = sorted(langs.iteritems(), key = lambda item:item[1]['lines'], reverse = True)
+        print '统计结果'
         print ' Language  Files  Code Lines  Comment Lines  Blank Lines  Total Lines  Total Per'
-        for x in langs.keys():
-            print '%8s:'%x, '%6d'%langs[x]['files'], '%11d'%langs[x]['codes'], '%14d'%langs[x]['comments'], '%12d'%langs[x]['blanks'], '%12d'%langs[x]['lines'], '%9.2f%%'%(100.0*langs[x]['lines']/lines)
+        for x in langs:
+            print '%8s:'%x[0], '%6d'%x[1]['files'], '%11d'%x[1]['codes'], '%14d'%x[1]['comments'], '%12d'%x[1]['blanks'], '%12d'%x[1]['lines'], '%9.2f%%'%(100.0*x[1]['lines']/lines)
         print '   Totals', '%6d'%files, '%11d'%codes, '%14d'%comments, '%12d'%blanks, '%12d'%lines

@@ -6,8 +6,7 @@ from util import config, Dir
 
 start = time.time()
 
-Dir('exp').analys()
+Dir('D:\\Github\\kafka').analys()
 
-end = time.time()
-
-print '耗时', round(end-start, 3), '秒'
+print '耗时'
+print round(time.time()-start, 3), '秒'
