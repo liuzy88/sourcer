@@ -1,8 +1,13 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import time
 from util import config, Dir
 
-rootpath = 'exp'
+start = time.time()
 
-Dir(rootpath).analys()
+Dir('D:\\Github\\kafka').analys()
+
+end = time.time()
+
+print '耗时', round(end-start, 3), '秒'

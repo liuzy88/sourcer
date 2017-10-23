@@ -24,10 +24,10 @@ def log(num, tag, rline):
         print '%3d|'%num, '%4s'%'' + tag + '|', rline
 
 def analys(path, lang):
-    lines = 0
     codes = 0
     comments = 0
     blanks = 0
+    lines = 0
 
     string_regex = lang['string_regex']
     single_comment = lang['single_comment']
@@ -116,4 +116,4 @@ def analys(path, lang):
     # print '注释:%4d'%comments, '占比:%6.2f%%'%(100.0*comments/lines)
     # print '空行:%4d'%blanks, '占比:%6.2f%%'%(100.0*blanks/lines)
 
-    return { 'path': path, 'lines': lines,  'codes': codes, 'comments': comments, 'blanks':blanks}
+    return { 'path': path,  'codes': codes, 'comments': comments, 'blanks':blanks, 'lines': lines }
