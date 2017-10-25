@@ -6,6 +6,7 @@ from code import analys
 
 # 配置文件
 config = config.config
+debug = config['debug']
 # 扩展名-语言
 ext_lang = {}
 # 已配置的语言
@@ -20,10 +21,11 @@ for x in config['languages']:
         ext_lang[exts[y]] = x
 config_languages.sort()
 config_exts.sort()
-print '已配置的语言:'
-print config_languages
-print '已配置的扩展名:'
-print config_exts
+if debug:
+    print '已配置的语言:'
+    print config_languages
+    print '已配置的扩展名:'
+    print config_exts
 
 # 返回目录下所有文件
 def read_files(rootpath, files):
@@ -31,7 +33,7 @@ def read_files(rootpath, files):
     for x in xrange(0, len(list)):
         path = os.path.join(rootpath, list[x])
         if os.path.isdir(path) and not(path.startswith('.')):
-            read_files(path, files)
+            files = read_files(path, files)
         if os.path.isfile(path):
             files.append(path)
     files.sort()
@@ -82,6 +84,25 @@ class Dir:
                     self.included_langs.append(x['name'])
 
     def analys(self):
+        langs, files, codes, comments, blanks, lines = {}, 0, 0, 0, 0, 0
+        for x in self.file_lang:
+            lang = x['lang']['name']
+            ret = analys(x['path'], x['lang'])
+            if lang not in langs.keys():
+                langs[lang] = { 'files': 0, 'codes': 0, 'comments': 0, 'blanks': 0, 'lines': 0 }
+            langs[lang]['files'] += 1
+            langs[lang]['codes'] += ret['codes']
+            langs[lang]['comments'] += ret['comments']
+            langs[lang]['blanks'] += ret['blanks']
+            langs[lang]['lines'] += ret['lines']
+            codes += ret['codes']
+            comments += ret['comments']
+            blanks += ret['blanks']
+            lines += ret['lines']
+            files += 1
+        return { 'files': files,  'codes': codes, 'comments': comments, 'blanks':blanks, 'lines': lines }
+
+    def info(self):
         print '当前目录'
         print self.rootpath
         print '文件个数'
@@ -97,7 +118,7 @@ class Dir:
             lang = x['lang']['name']
             ret = analys(x['path'], x['lang'])
             if lang not in langs.keys():
-                langs[lang] = { 'files': 0, 'lines': 0, 'codes': 0, 'comments': 0, 'blanks': 0 }
+                langs[lang] = { 'files': 0, 'codes': 0, 'comments': 0, 'blanks': 0, 'lines': 0 }
             langs[lang]['files'] += 1
             langs[lang]['codes'] += ret['codes']
             langs[lang]['comments'] += ret['comments']

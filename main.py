@@ -1,12 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-import time
-from util import config, Dir
+from sourcer import *
 
-start = time.time()
+scantag('D:\\GitHub\\rabbitmq-server', 'rabbitmq_v3_6_12')
 
-Dir('D:\\Github\\kafka').analys()
-
-print '耗时'
-print round(time.time()-start, 3), '秒'
+scanfull('D:\\GitHub\\kafka')
