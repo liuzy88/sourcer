@@ -70,8 +70,8 @@ def info_dir(dir):
                 included_langs.append(x['name'])
     included_langs.sort()
     included_exts.sort()
-    print '已配置的语言:', config_langs
-    print '已配置的扩展名:', config_exts
+    print '配置的语言:', config_langs
+    print '配置的扩展名:', config_exts
     print '当前目录:', dir
     print '包含的语言:', included_langs
     print '包含的扩展名:', exts_nums

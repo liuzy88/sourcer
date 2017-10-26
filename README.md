@@ -1,4 +1,4 @@
-# 源代码统计（代码行/注释行/空行）工具 - 可配置
+# 可配置的源代码统计（代码行/注释行/空行）工具 
 
 ## 导入
 
@@ -140,8 +140,8 @@ info_dir('D:\\GitHub\\kafka')
 ```
 
 ```text
-已配置的语言: ['ASP.NET', 'C#', 'C/C++', 'DOS', 'Delphi', 'Erlang', 'GO', 'JS', 'Java', 'Lua', 'PHP', 'Pascal', 'Python', 'Ruby', 'Scala', 'Shell', 'Swift', 'XML', 'html', 'xsl']
-已配置的扩展名: ['.asp', '.aspx', '.bat', '.c', '.cmd', '.cpp', '.cs', '.erl', '.go', '.go', '.h', '.hrl', '.htm', '.html', '.inc', '.java', '.js', '.jsp', '.lua', '.pas', '.php', '.py', '.rb', '.scala', '.sh', '.swift', '.xml', '.xsl']
+配置的语言: ['ASP.NET', 'C#', 'C/C++', 'DOS', 'Delphi', 'Erlang', 'GO', 'JS', 'Java', 'Lua', 'PHP', 'Pascal', 'Python', 'Ruby', 'Scala', 'Shell', 'Swift', 'XML', 'html', 'xsl']
+配置的扩展名: ['.asp', '.aspx', '.bat', '.c', '.cmd', '.cpp', '.cs', '.erl', '.go', '.go', '.h', '.hrl', '.htm', '.html', '.inc', '.java', '.js', '.jsp', '.lua', '.pas', '.php', '.py', '.rb', '.scala', '.sh', '.swift', '.xml', '.xsl']
 当前目录: D:\GitHub\kafka
 包含的语言: ['DOS', 'Java', 'Python', 'Scala', 'Shell', 'html']
 包含的扩展名: {'.sh': 34, '.java': 23, '.scala': 274, '.py': 17, '.html': 6, '.bat': 8}
