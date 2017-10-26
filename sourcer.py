@@ -230,25 +230,25 @@ def analys(path, lang):
                         continue
                     #2 是否在多行注释中
                     if COMMENT_STAT:
-                        #6 去掉字符串
+                        #9 去掉字符串
                         line = cls(line, string_regex)
-                        #7 是否包含多行注释结尾
+                        #10 是否包含多行注释结尾
                         close = comment_close[comment_open_index]
                         if close in line:
                             COMMENT_STAT = False
                             next_str = line.split(close)[-1]
-                            #9 多行注释结尾后面的是否空白
+                            #11 多行注释结尾后面的是否空白
                             if re.match('^[\\s]*$', next_str) != None:
                                 comments += 1
                                 log(lines, '多行', rline)
                             else:
-                                #10 多行注释结尾后面的是否单行注释
-                                f10 = False
+                                #12 多行注释结尾后面的是否单行注释
+                                f12 = False
                                 for x in single_comment:
                                     if re.match('^[\\s]*' + x + '.*', next_str) != None:
-                                        f10 = True
+                                        f12 = True
                                         break
-                                if f10:
+                                if f12:
                                     comments += 1
                                     log(lines, '多行', rline)
                                 else:
@@ -279,8 +279,28 @@ def analys(path, lang):
                                 f5 = True
                                 break
                         if f5:
-                            comments += 1
-                            log(lines, '多行', rline)
+                            #6 是否多行注释结尾
+                            close = comment_close[comment_open_index]
+                            if close in line:
+                                COMMENT_STAT = False
+                                next_str = line.split(close)[-1]
+                                #7 多行注释结尾后面的是否空白
+                                if re.match('^[\\s]*$', next_str) != None:
+                                    comments += 1
+                                    log(lines, '多行', rline)
+                                else:
+                                    #8 多行注释结尾后面的是否单行注释
+                                    f8 = False
+                                    for x in single_comment:
+                                        if re.match('^[\\s]*' + x + '.*', next_str) != None:
+                                            f8 = True
+                                            break
+                                    if f8:
+                                        comments += 1
+                                        log(lines, '多行', rline)
+                                    else:
+                                        codes += 1
+                                        log(lines, '代码', rline)
                         else:
                             codes += 1
                             log(lines, '代码', rline)
