@@ -193,7 +193,7 @@ def cls(line, string_regex):
 
 def log(num, tag, rline):
     if debug:
-        print '%3d|'%num, '%4s'%'' + tag + '|', rline
+        print '%3d|'%num, tag + '|', rline
 
 def analys_debug(path):
     global debug

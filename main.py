@@ -17,4 +17,4 @@ from sourcer import *
 # scan_tag('D:\\GitHub\\rabbitmq-server', 'rabbitmq_v3_6_12')
 
 ### 统计所有tag（生产）
-scan_all_tag('D:\\GitHub\\libjson')
+# scan_all_tag('D:\\GitHub\\libjson')
