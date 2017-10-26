@@ -172,7 +172,8 @@ def scan(dir):
         blanks += ret['blanks']
         lines += ret['lines']
         files += 1
-    return { 'files': files,  'codes': codes, 'comments': comments, 'blanks':blanks, 'lines': lines }
+    langs['all'] = { 'files': files,  'codes': codes, 'comments': comments, 'blanks':blanks, 'lines': lines }
+    return langs
 
 ### 代码分析
 ####################################################

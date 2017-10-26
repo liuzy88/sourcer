@@ -164,6 +164,10 @@ info_dir('D:\\GitHub\\kafka')
 scan_tag('D:\\GitHub\\rabbitmq-server', 'rabbitmq_v3_6_12')
 ```
 
+```text
+rabbitmq_v3_6_12 2017-10-26 {'XML': {'files': 6, 'codes': 2952, 'lines': 3077, 'comments': 0, 'blanks': 125}, 'all': {'files': 185, 'codes': 43503, 'lines': 59975, 'comments': 9063, 'blanks': 7409}, 'Python': {'files': 2, 'codes': 908, 'lines': 1075, 'comments': 36, 'blanks': 131}, 'DOS': {'files': 7, 'codes': 923, 'lines': 1079, 'comments': 0, 'blanks': 156}, 'Erlang': {'files': 166, 'codes': 38481, 'lines': 54461, 'comments': 9027, 'blanks': 6953}, 'xsl': {'files': 4, 'codes': 239, 'lines': 283, 'comments': 0, 'blanks': 44}}
+```
+
 ### 统计所有tag（生产）
 
 ```python
@@ -171,9 +175,9 @@ scan_all_tag('D:\\GitHub\\libjson')
 ```
 
 ```text
-v0.4 2009-12-31 {'files': 3, 'codes': 1039, 'lines': 1337, 'comments': 128, 'blanks': 154}
-v0.5 2010-01-14 {'files': 3, 'codes': 1041, 'lines': 1339, 'comments': 128, 'blanks': 154}
-v0.6 2010-02-23 {'files': 3, 'codes': 1152, 'lines': 1480, 'comments': 140, 'blanks': 170}
-v0.7 2010-04-10 {'files': 3, 'codes': 1353, 'lines': 1710, 'comments': 141, 'blanks': 198}
-v0.8 2010-09-04 {'files': 3, 'codes': 1353, 'lines': 1710, 'comments': 141, 'blanks': 198}
+v0.4 2009-12-31 {'all': {'files': 3, 'codes': 1039, 'lines': 1337, 'comments': 128, 'blanks': 154}, 'C/C++': {'files': 3, 'codes': 1039, 'lines': 1337, 'comments': 128, 'blanks': 154}}
+v0.5 2010-01-14 {'all': {'files': 3, 'codes': 1041, 'lines': 1339, 'comments': 128, 'blanks': 154}, 'C/C++': {'files': 3, 'codes': 1041, 'lines': 1339, 'comments': 128, 'blanks': 154}}
+v0.6 2010-02-23 {'all': {'files': 3, 'codes': 1152, 'lines': 1480, 'comments': 140, 'blanks': 170}, 'C/C++': {'files': 3, 'codes': 1152, 'lines': 1480, 'comments': 140, 'blanks': 170}}
+v0.7 2010-04-10 {'all': {'files': 3, 'codes': 1353, 'lines': 1710, 'comments': 141, 'blanks': 198}, 'C/C++': {'files': 3, 'codes': 1353, 'lines': 1710, 'comments': 141, 'blanks': 198}}
+v0.8 2010-09-04 {'all': {'files': 3, 'codes': 1353, 'lines': 1710, 'comments': 141, 'blanks': 198}, 'C/C++': {'files': 3, 'codes': 1353, 'lines': 1710, 'comments': 141, 'blanks': 198}}
 ```
