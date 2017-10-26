@@ -1,8 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-def langs():
-    return [{
+languages = [{
         'name': 'C/C++',
         'exts': ['.h', '.c', '.cpp'],
         'string_regex': ['"[\S \t]*?"'],
