@@ -1,5 +1,4 @@
-# sourcer
-source counter
+# 源代码统计（代码行/注释行/空行）工具 - 可配置
 
 ## 导入
 
@@ -9,10 +8,11 @@ from sourcer import *
 
 ### 分析代码打印分析过程（测试）
 
-`analys_debug('exp/Test.java')`
+```python
+analys_debug('exp/Test.java')
+```
 
 ```text
-# 结果：
 文件 exp/Test.java
 类型 Java
   2|     多行|  * Test file
@@ -61,10 +61,11 @@ from sourcer import *
 空行:   3 占比:  7.69%
 ```
 
-`analys_debug('exp/test.c')`
+```python
+analys_debug('exp/test.c')
+```
 
 ```text
-# 结果：
 文件 exp/test.c
 类型 C/C++
   1|     空行| 
@@ -134,10 +135,11 @@ info_dir_tag('D:\\GitHub\\rabbitmq-server', 'rabbitmq_v3_6_12')
 
 ### 当前代码详情（测试）
 
-`info_dir('D:\\GitHub\\kafka')`
+```python
+info_dir('D:\\GitHub\\kafka')
+```
 
 ```text
-# 结果：
 已配置的语言: ['ASP.NET', 'C#', 'C/C++', 'DOS', 'Delphi', 'Erlang', 'GO', 'JS', 'Java', 'Lua', 'PHP', 'Pascal', 'Python', 'Ruby', 'Scala', 'Shell', 'Swift', 'XML', 'html', 'xsl']
 已配置的扩展名: ['.asp', '.aspx', '.bat', '.c', '.cmd', '.cpp', '.cs', '.erl', '.go', '.go', '.h', '.hrl', '.htm', '.html', '.inc', '.java', '.js', '.jsp', '.lua', '.pas', '.php', '.py', '.rb', '.scala', '.sh', '.swift', '.xml', '.xsl']
 当前目录: D:\GitHub\kafka
@@ -164,10 +166,11 @@ scan_tag('D:\\GitHub\\rabbitmq-server', 'rabbitmq_v3_6_12')
 
 ### 统计所有tag（生产）
 
-`scan_all_tag('D:\\GitHub\\libjson')`
+```python
+scan_all_tag('D:\\GitHub\\libjson')
+```
 
 ```text
-# 结果：
 v0.4 2009-12-31 {'files': 3, 'codes': 1039, 'lines': 1337, 'comments': 128, 'blanks': 154}
 v0.5 2010-01-14 {'files': 3, 'codes': 1041, 'lines': 1339, 'comments': 128, 'blanks': 154}
 v0.6 2010-02-23 {'files': 3, 'codes': 1152, 'lines': 1480, 'comments': 140, 'blanks': 170}
