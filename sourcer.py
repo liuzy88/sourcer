@@ -34,9 +34,9 @@ def list_files(dir, files):
     return files
 
 def info_dir_tag(dir, tag):
-    x = os.popen('git pull')
-    x.close()
     x = os.popen('git checkout ' + tag)
+    x.close()
+    x = os.popen('git pull')
     x.close()
     info_dir(dir)
 
@@ -114,6 +114,8 @@ def scan_all_tag(dir):
     for x in tags:
         tag = x[:-1]
         x = os.popen('git checkout ' + tag)
+        x.close()
+        x = os.popen('git pull')
         x.close()
         x = os.popen('git log -1 --format=%ct')
         date = time.strftime("%Y-%m-%d", time.localtime(int(x.read()[:-1])))
