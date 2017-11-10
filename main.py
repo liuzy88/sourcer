@@ -9,7 +9,7 @@ from sourcer import *
 
 ### 某tag的代码的详情（测试）
 # info_dir_tag('D:\\GitHub\\rabbitmq-server', 'rabbitmq_v3_6_12')
-info_dir_tag('D:\\GitHub\\kafka', '0.11.0')
+# info_dir_tag('D:\\GitHub\\kafka', '0.11.0')
 
 ### 当前代码详情（测试）
 # info_dir('D:\\GitHub\\kafka')
@@ -21,4 +21,4 @@ info_dir_tag('D:\\GitHub\\kafka', '0.11.0')
 
 ### 统计所有tag（生产）
 # scan_all_tag('D:\\GitHub\\rabbitmq-server')
-# scan_all_tag('D:\\GitHub\\kafka')
+scan_all_tag('D:\\GitHub\\mesos')

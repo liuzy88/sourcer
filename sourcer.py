@@ -113,20 +113,15 @@ def scan_all_tag(dir):
     ret = []
     for x in tags:
         tag = x[:-1]
-        x = os.popen('git checkout ' + tag)
-        x.close()
-        x = os.popen('git pull')
-        x.close()
-        x = os.popen('git log -1 --format=%ct')
-        date = time.strftime("%Y-%m-%d", time.localtime(int(x.read()[:-1])))
-        x.close()
-        info = scan(dir)
-        print tag, date, info
-        ret.append({ 'tag': tag, 'date': date, 'info': info })
+        if '-dev' not in tag and '-alpha' not in tag and '-beta' not in tag and '-rc' not in tag:
+            info = scan_tag(dir, tag)
+            ret.append(info)
     return ret
 
 def scan_tag(dir, tag):
     x = os.popen('git checkout ' + tag)
+    x.close()
+    x = os.popen('git pull')
     x.close()
     x = os.popen('git log -1 --format=%ct')
     date = time.strftime("%Y-%m-%d", time.localtime(int(x.read()[:-1])))
@@ -174,8 +169,9 @@ def scan(dir):
         blanks += ret['blanks']
         lines += ret['lines']
         files += 1
-    langs['all'] = { 'files': files,  'codes': codes, 'comments': comments, 'blanks':blanks, 'lines': lines }
-    return langs
+    # langs['all'] = { 'files': files,  'codes': codes, 'comments': comments, 'blanks':blanks, 'lines': lines }
+    # return langs
+    return files, codes, comments, blanks, lines
 
 ### 代码分析
 ####################################################
